@@ -16,7 +16,7 @@ class Wallet:
         if provider == 'ethereum':
             self.private_key = self.get_eth_private_key(self.seed_phrase)
         if provider in ['argent', 'braavos']:
-            self.address = self.calcte_address(self.provider, self.private_key)
+            self.address = self.calculate_address(self.provider, self.private_key)
         else:
             self.eth_client = EthClient(private_key=self.private_key, network=Networks.Ethereum)
             self.address = self.eth_client.account.address
